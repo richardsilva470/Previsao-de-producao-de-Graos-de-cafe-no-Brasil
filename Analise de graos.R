@@ -99,11 +99,11 @@ tail(serie)
 
 # Definindo a base de dados em treinamento e teste
 train <- serie %>%
-  filter_index("2007 jul" ~ "2019 jul")
+  filter_index("2007 jul" ~ "2022 jul")
 tail(train)
 
 test <- serie %>%
-  filter_index("2020 jan" ~ .);test
+  filter_index("2023 jan" ~ .);test
 
 ### verificando se esta correto
 head(test)
@@ -132,8 +132,8 @@ sales_fit
 
 
 
-# GERANDO UMA PREVISAO h = 4 passos 
-sales_fc <- sales_fit %>% forecast(h = 4)
+# GERANDO UMA PREVISAO h = 5 passos 
+sales_fc <- sales_fit %>% forecast(h = 5)
 sales_fc
 
 # Grafico da serie com as previsoes 
@@ -145,7 +145,7 @@ sales_fc %>%
   ) +
   labs(
     y = "Toneladas",
-    title = "Previsão de toneladas de 2020 à 2021"
+    title = "Previsão de toneladas de 203 à 2025"
   ) +
   guides(colour = guide_legend(title = "Forecast"))
 
@@ -172,8 +172,8 @@ sales_fit
 
 
 
-# GERANDO UMA PREVISAO h = 4 passos 
-sales_fc <- sales_fit %>% forecast(h = 4)
+# GERANDO UMA PREVISAO h = 5 passos 
+sales_fc <- sales_fit %>% forecast(h = 5)
 sales_fc
 
 # Grafico da serie com as previsoes 
@@ -185,7 +185,7 @@ sales_fc %>%
   ) +
   labs(
     y = "Toneladas",
-    title = "Previsão de toneladas para os 4 próximos semestres"
+    title = "Previsão de toneladas para os 5 próximos semestres"
   ) +
   guides(colour = guide_legend(title = "Forecast"))
 
